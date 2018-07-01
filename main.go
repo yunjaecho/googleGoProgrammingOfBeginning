@@ -1,7 +1,7 @@
 package main
 
 import (
-	_"./chapter2"
+	_"./chapter3"
 )
 
 func main() {
