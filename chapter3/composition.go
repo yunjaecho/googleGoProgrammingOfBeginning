@@ -25,6 +25,10 @@ func (c car) getVN() string {
 	return "car VN"
 }
 
+type manufacture interface {
+	getVN() string
+}
+
 
 func newCar() *car {
 	result := car{}
@@ -66,8 +70,16 @@ func init() {
 	fmt.Println(cCar)
 	cCar.getMpg()
 
-	defaultCar := newCar{}
+	defaultCar := newCar()
 	fmt.Println("defaultCar ", defaultCar)
+
+	// polymorphic
+	aTruck := truck{vehicle{15, 2}, black}
+	mans := [...]manufacture{cCar, aTruck}
+
+	for i, man := range mans {
+		fmt.Println("interaction=", i, man.getVN())
+	}
 
 }
 

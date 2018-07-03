@@ -1,0 +1,4 @@
+defaultCar  &{{20 4} black}
+interaction= 0 car VN
+interaction= 1 truck VN
+=== File Read and Write ===
